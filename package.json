@@ -1,0 +1,24 @@
+{
+  "name": "fay-gurme",
+  "version": "2.2.0",
+  "private": true,
+  "type": "module",
+  "description": "Cinematic, bilingual digital menu for a Turkish restaurant — vanilla JS, GSAP and a zero-dependency static build.",
+  "author": "Erberk Akbulut",
+  "license": "MIT",
+  "scripts": {
+    "dev": "node server.mjs",
+    "start": "node server.mjs",
+    "build": "node scripts/build.mjs",
+    "check": "node --check server.mjs && node --check public/js/app.js && node --check public/js/experience.js && node --check public/js/media-review.js && node --check public/js/video-review.js && node --check public/i18n/dict.js && node --check public/i18n/i18n.js && node scripts/check-i18n.mjs",
+    "format": "npx prettier@3 --write \"public/**/*.{js,css}\" \"scripts/**/*.{cjs,mjs}\" server.mjs",
+    "qa:audit": "node scripts/qa/audit.cjs",
+    "qa:a11y": "node scripts/qa/accessibility.cjs",
+    "qa:behavior": "node scripts/qa/behavior.cjs",
+    "qa:experience": "node scripts/qa/experience-audit.cjs",
+    "qa:video-review": "node scripts/qa/video-review-audit.cjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

@@ -1,0 +1,19 @@
+node_modules/
+dist/
+.vercel/
+.env*
+!.env.example
+__pycache__/
+*.py[cod]
+
+# Packaged deliveries are generated from dist/.
+*.zip
+
+# Local research, audit captures and the 2.5 GB video restoration workspace.
+# Deployment-ready assets and restoration metadata live under public/.
+source/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.log
