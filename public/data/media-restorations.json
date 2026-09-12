@@ -1,0 +1,221 @@
+{
+  "createdAt": "2026-09-12",
+  "method": "Twelve curated hero/menu photographs use hand-guided, AI-assisted faithful restoration. The other 185 available product photographs use local Real-ESRGAN x4plus via NCNN/Vulkan with a 72/28 restored/source blend and WebP quality 88.",
+  "limitation": "Fine detail is reconstructed, not recovered photographic evidence. Original source photos remain archived. All 197 products with source photographs have separate restored files; product 3727 has no source photograph.",
+  "photos": [
+    {
+      "id": "2589",
+      "name": "Fay Usulu Hindi, Firik Pilavı ile",
+      "original": "/media/041c00cc650bce5d.webp",
+      "restored": "/media/enhanced-2589.webp",
+      "originalSize": [
+        512,
+        462
+      ],
+      "restoredSize": [
+        1320,
+        1191
+      ],
+      "sourceUrl": "https://qrmenu-photos.b-cdn.net/tenant_24/products/60cfef1c-a202-4730-86ce-bfbac2a8b648.webp"
+    },
+    {
+      "id": "2590",
+      "name": "Gravy Soslu Hindi Rosto",
+      "original": "/media/3d1a2b9e3f244ba3.webp",
+      "restored": "/media/enhanced-2590.webp",
+      "originalSize": [
+        431,
+        512
+      ],
+      "restoredSize": [
+        1151,
+        1367
+      ],
+      "sourceUrl": "https://qrmenu-photos.b-cdn.net/tenant_24/products/f57c8d09-352a-43d4-9274-008933f1ed26.webp"
+    },
+    {
+      "id": "2599",
+      "name": "Mürdüm Erikli Kuzu Şiş",
+      "original": "/media/7b2b03dd238af260.webp",
+      "restored": "/media/enhanced-2599.webp",
+      "originalSize": [
+        384,
+        512
+      ],
+      "restoredSize": [
+        1086,
+        1448
+      ],
+      "sourceUrl": "https://qrmenu-photos.b-cdn.net/tenant_24/products/85a948e8-ce07-42af-9cfb-ec02705cbc6d.webp"
+    },
+    {
+      "id": "2506",
+      "name": "Vejeteryan Pizza",
+      "original": "/media/f11f514b678fbd57.webp",
+      "restored": "/media/enhanced-2506.webp",
+      "originalSize": [
+        512,
+        512
+      ],
+      "restoredSize": [
+        1254,
+        1254
+      ],
+      "sourceUrl": "https://qrmenu-photos.b-cdn.net/tenant_24/products/74e81cf3-e99b-4f4b-928e-875e96c763c7.webp"
+    },
+    {
+      "id": "2622",
+      "name": "Dondurmalı Profiterol",
+      "original": "/media/bcea92627f05be60.webp",
+      "restored": "/media/enhanced-2622.webp",
+      "originalSize": [
+        512,
+        512
+      ],
+      "restoredSize": [
+        1254,
+        1254
+      ],
+      "sourceUrl": "https://qrmenu-photos.b-cdn.net/tenant_24/products/5cfd3503-38c9-4352-867b-6758daa588ab.webp"
+    },
+    {
+      "id": "2625",
+      "name": "İsotlu Parfe",
+      "original": "/media/7f0a5750868935e0.webp",
+      "restored": "/media/enhanced-2625.webp",
+      "originalSize": [
+        392,
+        512
+      ],
+      "restoredSize": [
+        1098,
+        1433
+      ],
+      "sourceUrl": "https://qrmenu-photos.b-cdn.net/tenant_24/products/d371dc7f-8331-43b2-b9a0-0af132ffb1ae.webp"
+    },
+    {
+      "id": "2600",
+      "name": "Yöresel Gurme Bolu Tabağı",
+      "original": "/media/6010f2d9a3c9648f.webp",
+      "restored": "/media/enhanced-2600.webp",
+      "originalSize": [
+        375,
+        375
+      ],
+      "restoredSize": [
+        1254,
+        1254
+      ],
+      "sourceUrl": "https://qrmenu-photos.b-cdn.net/tenant_24/products/9ffdc190-8666-48c5-970a-e38fa8716915.webp"
+    },
+    {
+      "id": "2601",
+      "name": "Yöresel Fay Kuzu Pres",
+      "original": "/media/9920ae919946e79d.webp",
+      "restored": "/media/enhanced-2601.webp",
+      "originalSize": [
+        512,
+        512
+      ],
+      "restoredSize": [
+        1254,
+        1254
+      ],
+      "sourceUrl": "https://qrmenu-photos.b-cdn.net/tenant_24/products/f8fadbda-c481-48bf-8f2d-55ceb11093c9.webp"
+    },
+    {
+      "id": "2602",
+      "name": "Yöresel Demiglace Soslu Bonfile",
+      "original": "/media/23ed96cb6f7a4ee8.webp",
+      "restored": "/media/enhanced-2602.webp",
+      "originalSize": [
+        512,
+        512
+      ],
+      "restoredSize": [
+        1254,
+        1254
+      ],
+      "sourceUrl": "https://qrmenu-photos.b-cdn.net/tenant_24/products/608bfbb2-1d06-4d11-869b-561d2a05c5eb.webp"
+    },
+    {
+      "id": "2603",
+      "name": "Yöresel Gerede Kazı",
+      "original": "/media/9061d698eb3997cc.webp",
+      "restored": "/media/enhanced-2603.webp",
+      "originalSize": [
+        512,
+        512
+      ],
+      "restoredSize": [
+        1254,
+        1254
+      ],
+      "sourceUrl": "https://qrmenu-photos.b-cdn.net/tenant_24/products/9785b605-33ea-4290-b1bf-65b1dfc6e044.webp"
+    },
+    {
+      "id": "2604",
+      "name": "Yöresel Keşli Cevizli Erişte",
+      "original": "/media/161ff3d0234a9bb4.webp",
+      "restored": "/media/enhanced-2604.webp",
+      "originalSize": [
+        512,
+        497
+      ],
+      "restoredSize": [
+        1273,
+        1236
+      ],
+      "sourceUrl": "https://qrmenu-photos.b-cdn.net/tenant_24/products/c5238561-5dde-422c-ad32-e88b8809c535.webp"
+    },
+    {
+      "id": "2606",
+      "name": "Fay Usulu Kuzu Tandır",
+      "original": "/media/a651c7d49dbd1643.webp",
+      "restored": "/media/enhanced-2606.webp",
+      "originalSize": [
+        384,
+        512
+      ],
+      "restoredSize": [
+        1086,
+        1448
+      ],
+      "sourceUrl": "https://qrmenu-photos.b-cdn.net/tenant_24/products/ef74ba69-c785-4202-9476-d159ec652ac2.webp"
+    }
+  ],
+  "productBatch": {
+    "products": 198,
+    "productsWithSourcePhoto": 197,
+    "curatedRestorations": 12,
+    "localRealEsrganRestorations": 185,
+    "productsWithoutSourcePhoto": ["3727"],
+    "localMethod": "Real-ESRGAN x4plus NCNN/Vulkan; 72% restoration and 28% source blend; WebP quality 88; maximum long edge 1400px.",
+    "apiUsed": false,
+    "paidServiceUsed": false,
+    "originalsModified": false
+  },
+  "video": {
+    "used": "/media/venue-ai-1080.mp4",
+    "resolution": [
+      1080,
+      1920
+    ],
+    "durationSeconds": 24.821,
+    "bytes": 24896763,
+    "linkiSource": "https://linki.ac/uploads/backgrounds/d583490e0359065cdc271282f1546370.mp4",
+    "linkiLocal": "/media/venue-linki-original.mp4",
+    "linkiResolution": [
+      720,
+      1280
+    ],
+    "linkiBytes": 4485475,
+    "upscaleStatus": "Completed locally: Python + Real-ESRGAN x4plus NCNN/Vulkan + FFmpeg. 75% restored / 25% original blend, 1080x1920, 30 fps, original audio preserved.",
+    "original": "/media/f83d333f18dbd47b.mp4",
+    "originalResolution": [
+      720,
+      1280
+    ],
+    "methodReport": "source/video-upscale/report.json"
+  }
+}

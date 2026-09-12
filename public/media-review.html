@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,nofollow">
+  <title data-i18n="mr.title.line1">Görsel karşılaştırması · Fay Gurme</title><link rel="icon" href="/favicon.svg"><link rel="stylesheet" href="/css/fonts.css"><link rel="stylesheet" href="/css/media-review.css">
+  <script defer src="/i18n/dict.js"></script>
+  <script defer src="/i18n/i18n.js"></script>
+  <script defer src="/js/media-review.js"></script>
+</head>
+<body>
+  <header><a href="/">FAY <em>gurme</em></a><div class="lang-switch" role="group"><button type="button" class="lang-option" data-action="set-lang" data-lang="tr" aria-pressed="true" data-i18n="lang.tr">TR</button><button type="button" class="lang-option" data-action="set-lang" data-lang="en" aria-pressed="false" data-i18n="lang.en">EN</button></div><a class="back" href="/" data-i18n="mr.back">Yeni tasarıma dön ↗</a></header>
+  <main>
+    <section class="intro"><p class="eyebrow" data-i18n="mr.eyebrow">ÖNCE / SONRA KARŞILAŞTIRMASI</p><h1><span data-i18n="mr.title.line1">Aynı kare.</span><br><em data-i18n="mr.title.line2">Daha net bir bakış.</em></h1><p data-i18n="mr.intro">Çizgiyi kaydırarak kaynak fotoğrafla iyileştirilmiş sürümü karşılaştırın. Yapay zekâ destekli restorasyon, kaybolan ince dokuları yeniden yorumlayabilir.</p><label class="select-label" for="photo-choice" data-i18n="mr.selectLabel">Fotoğraf seçin</label><select id="photo-choice" data-i18n-attrs='{"aria-label":"mr.selectAria"}' aria-label="Karşılaştırılacak fotoğraf"><option data-i18n="mr.loading">Yükleniyor…</option></select><p id="photo-metadata" class="metadata" aria-live="polite"></p><p class="note" data-i18n-html="mr.note">Burada 12 öne çıkan kare gösterilir; kaynak fotoğrafı olan 197 ürünün tamamı iyileştirildi. Ana video da 720p kaynaktan 1080p’ye yükseltildi. <a href="/video-review.html">Videoyu karşılaştırın ↗</a></p></section>
+    <section class="comparison" data-i18n-attrs='{"aria-label":"mr.comparisonAria"}' aria-label="Önce ve sonra karşılaştırması">
+      <div class="comparison-frame" id="comparison-frame">
+        <img id="restored-photo" alt="" width="1254" height="1254">
+        <img id="source-photo" alt="" width="1254" height="1254">
+        <div class="comparison-line" aria-hidden="true"><span>‹ ›</span></div>
+        <span class="label label-before" data-i18n="mr.labelBefore">KAYNAK</span><span class="label label-after" data-i18n="mr.labelAfter">İYİLEŞTİRİLMİŞ</span>
+      </div>
+      <label class="range-label" for="comparison-range"><span data-i18n="mr.rangeLabel">Karşılaştırma çizgisi</span> <span data-i18n="mr.rangeHint">← Kaydırın →</span></label>
+      <input id="comparison-range" type="range" min="0" max="100" value="50" data-i18n-attrs='{"aria-label":"mr.rangeAria"}' aria-label="Orijinal fotoğrafın görünür yüzdesi" aria-valuetext="Yüzde 50 kaynak fotoğraf">
+      <p class="image-note" id="image-note" data-i18n="mr.imageNoteDefault">Solda kaynak, sağda iyileştirilmiş sürüm.</p>
+    </section>
+  </main>
+</body>
+</html>

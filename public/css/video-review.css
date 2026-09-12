@@ -1,0 +1,146 @@
+main {
+  padding-top: 36px;
+  padding-bottom: 36px;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 8%;
+}
+.video-facts {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 12px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 20px 0;
+  margin: 28px 0;
+}
+.video-facts i {
+  font-style: normal;
+  padding: 0 8px;
+  color: var(--muted);
+}
+.video-frame {
+  aspect-ratio: 9/16;
+  max-height: 70svh;
+  max-width: 100%;
+  margin-inline: auto;
+  background: #102e29;
+}
+.video-frame video,
+.source-video-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.video-frame video {
+  object-fit: cover;
+  display: block;
+}
+.source-video-layer {
+  clip-path: inset(0 calc(100% - var(--split)) 0 0);
+  overflow: hidden;
+}
+.video-frame.zoomed video {
+  transform: scale(1.8);
+  transform-origin: 50% 48%;
+}
+.download-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  margin-top: 28px;
+  font-size: 11px;
+}
+.download-links a {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--green);
+}
+.video-buttons {
+  display: flex;
+  gap: 8px;
+  justify-content: space-between;
+}
+.video-buttons button {
+  flex: 1;
+  min-height: 44px;
+  border: 1px solid var(--line);
+  background: transparent;
+  font: 11px var(--sans);
+  color: var(--green);
+  cursor: pointer;
+  padding: 8px;
+}
+.video-buttons button:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}
+.video-buttons button[aria-pressed='true'],
+#video-play {
+  background: var(--green);
+  color: var(--paper);
+  border-color: var(--green);
+}
+button:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 4px;
+}
+#video-status {
+  min-height: 36px;
+}
+.video-frame .label {
+  font-size: 7px;
+  padding: 6px;
+  top: 10px;
+}
+.video-frame .label-before {
+  left: 10px;
+}
+.video-frame .label-after {
+  right: 10px;
+}
+.image-note {
+  line-height: 1.8;
+}
+.video-frame .comparison-line {
+  z-index: 2;
+}
+.video-frame .label {
+  z-index: 3;
+}
+.video-frame {
+  width: min(100%, 36svh);
+  height: auto;
+  max-height: none;
+}
+@media (max-width: 760px) {
+  main {
+    padding-top: 30px;
+    gap: 24px;
+  }
+  .video-frame {
+    width: min(100%, 36.5625svh);
+    max-height: none;
+  }
+  .intro .note {
+    margin-top: 16px;
+  }
+  .video-facts {
+    margin: 20px 0;
+    font-size: 11px;
+    padding: 16px 0;
+  }
+  .download-links {
+    margin-top: 16px;
+  }
+  .intro #video-status {
+    margin-bottom: 0;
+    min-height: 0;
+  }
+  .video-buttons button {
+    font-size: 10px;
+  }
+}

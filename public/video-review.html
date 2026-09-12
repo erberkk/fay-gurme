@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
+  <title data-i18n="vr.title.line1">Video karşılaştırması · Fay Gurme</title><link rel="icon" href="/favicon.svg"><link rel="stylesheet" href="/css/fonts.css"><link rel="stylesheet" href="/css/media-review.css"><link rel="stylesheet" href="/css/video-review.css">
+  <script defer src="/i18n/dict.js"></script>
+  <script defer src="/i18n/i18n.js"></script>
+  <script defer src="/js/video-review.js"></script>
+</head>
+<body>
+  <header><a href="/">FAY <em>gurme</em></a><div class="lang-switch" role="group"><button type="button" class="lang-option" data-action="set-lang" data-lang="tr" aria-pressed="true" data-i18n="lang.tr">TR</button><button type="button" class="lang-option" data-action="set-lang" data-lang="en" aria-pressed="false" data-i18n="lang.en">EN</button></div><a class="back" href="/" data-i18n="mr.back">Yeni tasarıma dön ↗</a></header>
+  <main>
+    <section class="intro"><p class="eyebrow" data-i18n="vr.eyebrow">VİDEO · ÖNCE / SONRA</p><h1><span data-i18n="vr.title.line1">Aynı atmosfer.</span><br><em data-i18n="vr.title.line2">Daha temiz bir kare.</em></h1><p data-i18n="vr.intro">Orijinal 720p video ile bilgisayarda iyileştirilen 1080p sürümü karşılaştırın. Çizgiyi kaydırın; ayrıntıları görmek için yakın planı açın.</p><div class="video-facts"><span data-i18n-html="vr.facts">720 × 1280 <i>→</i> 1080 × 1920</span><span data-i18n="vr.factsFps">30 fps · Aynı süre · Aynı ses</span></div><p class="note" data-i18n="vr.note">Python, Real-ESRGAN ve FFmpeg ile hazırlandı. İnce dokular yapay zekâ tarafından yeniden yorumlanabilir; bu, orijinal bir 1080p çekim değildir.</p><div class="download-links"><a href="/media/venue-ai-1080.mp4" download="Fay-Gurme-1080p.mp4" data-i18n="vr.download1080">1080p videoyu indir ↓</a><a href="/media/f83d333f18dbd47b.mp4" download="Fay-Gurme-kaynak-720p.mp4" data-i18n="vr.downloadOriginal">Orijinali indir ↓</a></div><p id="video-status" class="metadata" role="status" data-i18n="vr.statusPreparing">Videolar hazırlanıyor…</p></section>
+    <section class="comparison" data-i18n-attrs='{"aria-label":"vr.comparisonAria"}' aria-label="Video karşılaştırması">
+      <div class="comparison-frame video-frame" id="comparison-frame">
+        <video id="restored-video" muted playsinline preload="metadata" poster="/media/venue-poster.webp" data-src="/media/venue-ai-1080.mp4" data-i18n-attrs='{"aria-label":"vr.restoredAria"}' aria-label="İyileştirilmiş 1080p video"></video>
+        <div class="source-video-layer"><video id="source-video" muted playsinline preload="metadata" poster="/media/venue-poster.webp" src="/media/f83d333f18dbd47b.mp4" data-i18n-attrs='{"aria-label":"vr.sourceAria"}' aria-label="Kaynak 720p video"></video></div>
+        <div class="comparison-line" aria-hidden="true"><span>‹ ›</span></div><span class="label label-before" data-i18n="vr.labelBefore">KAYNAK · 720p</span><span class="label label-after" data-i18n="vr.labelAfter">İYİLEŞTİRİLMİŞ · 1080p</span>
+      </div>
+      <label class="range-label" for="comparison-range"><span data-i18n="vr.rangeLabel">Karşılaştırma çizgisi</span> <span data-i18n="vr.rangeHint">← Kaydırın →</span></label><input id="comparison-range" type="range" min="0" max="100" value="50" data-i18n-attrs='{"aria-label":"vr.rangeAria"}' aria-label="Kaynak videonun görünür yüzdesi" aria-valuetext="Yüzde 50 kaynak video">
+      <div class="video-buttons"><button id="video-play" disabled data-i18n="vr.play">Oynat</button><button id="video-zoom" aria-pressed="false" data-i18n="vr.zoom">Yakın plan</button><button id="video-sound" aria-pressed="false" data-i18n="vr.soundOn">Sesi aç</button></div>
+      <label class="range-label" for="video-seek"><span data-i18n="vr.positionLabel">Video konumu</span> <output id="video-time">00:00 / 00:25</output></label><input id="video-seek" type="range" min="0" max="24.8" step="0.033333" value="0" data-i18n-attrs='{"aria-label":"vr.positionAria"}' aria-label="Video konumu, saniye" disabled>
+      <p class="image-note" data-i18n="vr.note2">Çizgi iki sürümü ayırır. Yakın planda görüntü yalnızca inceleme için büyütülür.</p>
+    </section>
+  </main>
+</body>
+</html>
