@@ -1,0 +1,1448 @@
+/* Opening scene, tasting story and motion. See docs/DESIGN.md; menu styles live in styles.css. */
+:root {
+  --header-height: 80px;
+  --scene-dark: #122f29;
+  --scene-cream: #f3f0e7;
+  --scene-line: #9dab9f;
+  --scene-gold: #d0bd8a;
+  --scene-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+.utility-line {
+  display: none;
+}
+.site-header {
+  background: var(--paper);
+  border-bottom-color: var(--line);
+}
+.opening-scene {
+  position: relative;
+  background: var(--paper);
+}
+.scene-sticky {
+  height: calc(100svh - var(--header-height));
+  min-height: 660px;
+  position: sticky;
+  top: var(--header-height);
+  overflow: hidden;
+  background: var(--paper);
+  isolation: isolate;
+}
+.opening-meta {
+  position: absolute;
+  top: 24px;
+  left: var(--gutter);
+  right: var(--gutter);
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  font-size: 8px;
+  letter-spacing: 0.15em;
+  z-index: 8;
+  color: var(--muted);
+}
+.monument-word {
+  position: absolute;
+  left: 50%;
+  top: 30px;
+  transform: translateX(-50%);
+  font-family: var(--serif);
+  font-size: clamp(220px, 31vw, 510px);
+  line-height: 0.9;
+  letter-spacing: -0.06em;
+  white-space: nowrap;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  color: var(--green);
+  z-index: 0;
+}
+.monument-word > span {
+  display: inline-block;
+}
+.monument-word > em {
+  font-size: clamp(60px, 7vw, 112px);
+  position: absolute;
+  right: -26%;
+  top: 34%;
+  font-weight: 400;
+  letter-spacing: -0.055em;
+  transform: rotate(-8deg);
+}
+.floating-photo {
+  position: absolute;
+  margin: 0;
+  z-index: 2;
+  width: 18vw;
+  max-width: 285px;
+  box-shadow: 0 16px 70px #102e291a;
+}
+.photo-drift {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: var(--surface);
+}
+.photo-drift img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.photo-left {
+  left: 7.5%;
+  top: 30%;
+  height: 29svh;
+  min-height: 190px;
+  max-height: 310px;
+  transform: rotate(-9deg);
+}
+.photo-right {
+  right: 6.2%;
+  top: 25%;
+  height: 34svh;
+  min-height: 220px;
+  max-height: 365px;
+  transform: rotate(8deg);
+}
+.photo-right img {
+  object-position: 50% 60%;
+}
+.floating-photo figcaption {
+  position: absolute;
+  bottom: -24px;
+  left: 0;
+  font-size: 7px;
+  letter-spacing: 0.16em;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.cinema-frame {
+  position: absolute;
+  width: 32.5vw;
+  max-width: 520px;
+  height: 64svh;
+  max-height: 670px;
+  min-height: 420px;
+  left: 50%;
+  top: 53%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+}
+.cinema-reveal {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  background: var(--dark);
+  box-shadow: 0 24px 100px #102e2922;
+}
+.cinema-reveal video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.cinema-shade {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, #102e2933, transparent 35%, transparent 58%, #102e29b3);
+}
+.cinema-label {
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  top: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--paper);
+  font-size: 8px;
+  letter-spacing: 0.18em;
+}
+.cinema-label > span:first-child {
+  background: #102e29a6;
+  padding: 5px 7px;
+}
+.live-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--paper);
+  box-shadow: 0 0 0 5px #f7f5ef22;
+}
+.cinema-controls {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  right: 24px;
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 20px;
+  color: var(--paper);
+}
+.cinema-controls > span {
+  font-family: var(--serif);
+  font-size: 27px;
+  line-height: 1.1;
+}
+.cinema-controls .film-control {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+}
+.cinema-side-label {
+  writing-mode: vertical-rl;
+  font-size: 7px;
+  letter-spacing: 0.19em;
+  position: absolute;
+  right: -19px;
+  top: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  color: var(--muted);
+}
+.opening-copy {
+  position: absolute;
+  left: var(--gutter);
+  bottom: 12%;
+  z-index: 4;
+  max-width: 360px;
+}
+.opening-copy h1 {
+  font-size: clamp(50px, 4.7vw, 76px);
+  letter-spacing: -0.04em;
+  line-height: 1.02;
+}
+.line-mask {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 4px;
+}
+.line-mask > span,
+.line-mask > em {
+  display: block;
+}
+.opening-copy h1 em {
+  color: var(--green);
+}
+.opening-copy p {
+  font-size: 11px;
+  line-height: 1.9;
+  color: var(--muted);
+  margin-top: 16px;
+  max-width: 270px;
+}
+.discovery-orbit {
+  position: absolute;
+  right: 9%;
+  bottom: 12%;
+  width: 132px;
+  height: 132px;
+  border-radius: 50%;
+  background: var(--green);
+  color: var(--paper);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 12px;
+  text-align: center;
+  z-index: 8;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  line-height: 1.7;
+  box-shadow: 0 10px 40px #102e2914;
+}
+.discovery-orbit > svg:not(.orbit-ring) {
+  width: 18px;
+  height: 18px;
+}
+.discovery-orbit > .orbit-ring {
+  position: absolute;
+  inset: -7px;
+  width: calc(100% + 14px);
+  height: calc(100% + 14px);
+  stroke: var(--green);
+  stroke-width: 0.7;
+  stroke-dasharray: 3 5;
+  opacity: 0.5;
+  pointer-events: none;
+}
+.opening-bottom {
+  position: absolute;
+  bottom: 26px;
+  left: var(--gutter);
+  right: var(--gutter);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 7px;
+  letter-spacing: 0.13em;
+  color: var(--muted);
+  z-index: 7;
+}
+.opening-bottom > a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 44px;
+}
+.opening-bottom i {
+  font-style: normal;
+  padding-inline: 12px;
+}
+.scroll-line {
+  height: 25px;
+  width: 1px;
+  background: currentColor;
+  display: block;
+  transform-origin: top;
+}
+.scene-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--line);
+  z-index: 10;
+}
+.scene-progress > span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--bronze);
+  transform: scaleX(0);
+  transform-origin: left;
+}
+.scene-end-copy {
+  position: absolute;
+  left: var(--gutter);
+  bottom: 18%;
+  z-index: 6;
+  color: var(--paper);
+  font-family: var(--serif);
+  font-size: clamp(48px, 5.5vw, 86px);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  max-width: 370px;
+}
+.scene-end-copy > span,
+.scene-end-copy > em {
+  display: block;
+}
+.scene-end-copy > em {
+  color: var(--scene-gold);
+}
+.tasting-section {
+  background: var(--scene-dark);
+  color: var(--paper);
+  position: relative;
+}
+.tasting-sticky {
+  position: sticky;
+  top: var(--header-height);
+  height: calc(100svh - var(--header-height));
+  min-height: 780px;
+  padding-top: 48px;
+  padding-bottom: 52px;
+  overflow: hidden;
+}
+.tasting-heading {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 32px;
+  padding-bottom: 24px;
+}
+.tasting-heading .eyebrow {
+  color: var(--scene-gold);
+  font-size: 9px;
+  padding-top: 12px;
+}
+.tasting-heading h2 {
+  font-size: clamp(40px, 3.8vw, 60px);
+  line-height: 1.04;
+  letter-spacing: -0.03em;
+  max-width: 58%;
+  margin-right: 7%;
+}
+.tasting-heading h2 em {
+  color: var(--scene-gold);
+}
+.taste-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  gap: 10%;
+  align-items: center;
+  height: calc(100% - 162px);
+  max-height: 580px;
+}
+.taste-text {
+  position: relative;
+  padding-left: 5%;
+}
+.taste-counter {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 28px;
+  font-size: 10px;
+  color: #b8c3ba;
+}
+.taste-counter #taste-current {
+  font-family: var(--serif);
+  font-size: 52px;
+  color: var(--scene-gold);
+  line-height: 1;
+}
+.taste-counter i {
+  font-style: normal;
+  color: var(--scene-line);
+}
+.taste-copy-stack {
+  position: relative;
+  min-height: 235px;
+}
+.taste-copy[hidden] {
+  display: none;
+}
+.taste-copy .eyebrow {
+  font-size: 8px;
+  letter-spacing: 0.17em;
+  color: var(--scene-gold);
+  margin-bottom: 14px;
+}
+.taste-copy h3 {
+  font-size: clamp(46px, 4.2vw, 66px);
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+}
+.taste-copy > p:not(.eyebrow) {
+  font-size: 12px;
+  line-height: 1.9;
+  max-width: 290px;
+  color: #c9d1c8;
+  margin-top: 20px;
+}
+.taste-product-link {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  border-bottom: 1px solid #f7f5ef55;
+  color: var(--paper);
+  min-height: 44px;
+  font-size: 10px;
+  margin-top: 12px;
+  text-align: left;
+}
+.taste-product-link svg {
+  width: 15px;
+  height: 15px;
+}
+.taste-tabs {
+  display: flex;
+  gap: 24px;
+  margin-top: 32px;
+}
+.taste-tab {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 48px;
+  color: #acbab0;
+  font-size: 10px;
+  padding: 10px 0;
+}
+.taste-tab span {
+  font-size: 8px;
+  color: var(--scene-gold);
+}
+.taste-tab i {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: #f7f5ef33;
+}
+.taste-tab i:after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--scene-gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--slow) var(--scene-ease);
+}
+.taste-tab.is-active {
+  color: var(--paper);
+}
+.taste-tab.is-active i:after {
+  transform: scaleX(1);
+}
+.taste-gallery {
+  height: 100%;
+  max-height: 540px;
+  position: relative;
+  margin-right: 24px;
+  perspective: 1200px;
+  isolation: isolate;
+}
+.taste-image-card {
+  position: absolute;
+  inset: 16px 12px 20px 20px;
+  overflow: hidden;
+  background: var(--surface);
+  transform: rotate(3deg);
+  z-index: 2;
+  box-shadow: 0 12px 45px #0003;
+}
+.taste-image-card[hidden] {
+  display: none;
+}
+.taste-image-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.taste-image-card[data-taste-image='2'] img {
+  object-position: 50% 64%;
+}
+.taste-frame-line {
+  position: absolute;
+  inset: 12px 14px 24px 18px;
+  border: 1px solid #d0bd8a77;
+  transform: rotate(-4deg);
+  z-index: 0;
+}
+.taste-gallery-note {
+  position: absolute;
+  right: -22px;
+  top: 50%;
+  writing-mode: vertical-rl;
+  font-size: 7px;
+  letter-spacing: 0.2em;
+  color: var(--scene-gold);
+  transform: translateY(-50%);
+}
+.tasting-skip {
+  position: absolute;
+  bottom: 20px;
+  right: var(--gutter);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 44px;
+  font-size: 9px;
+  color: #c9d1c8;
+}
+.tasting-skip svg {
+  width: 14px;
+  height: 14px;
+}
+.editorial-ribbon {
+  overflow: hidden;
+  padding: 32px 0;
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+}
+.editorial-ribbon > div {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  white-space: nowrap;
+  width: max-content;
+  transform: translateX(-6%);
+}
+.editorial-ribbon span,
+.editorial-ribbon em {
+  font-family: var(--serif);
+  font-size: clamp(40px, 6vw, 96px);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--green);
+}
+.editorial-ribbon i {
+  font-style: normal;
+  font-size: 32px;
+  color: var(--bronze);
+  font-weight: 400;
+}
+.featured-section {
+  padding-top: 80px;
+}
+.featured-card {
+  perspective: 1000px;
+}
+.featured-image-button {
+  position: relative;
+}
+.image-follow-cursor {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 82px;
+  height: 82px;
+  border-radius: 50%;
+  background: var(--paper);
+  color: var(--green);
+  pointer-events: none;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+  letter-spacing: 0.13em;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+}
+.venue-section {
+  position: relative;
+}
+.venue-picture {
+  overflow: visible;
+}
+.venue-picture img {
+  object-fit: cover;
+}
+.venue-picture:before {
+  content: '';
+  position: absolute;
+  inset: 18px -18px -18px 18px;
+  border: 1px solid var(--bronze);
+  z-index: -1;
+}
+.venue-copy h2 {
+  overflow: hidden;
+}
+.menu-intro h2 {
+  overflow: hidden;
+}
+.reservation-link {
+  position: relative;
+  overflow: hidden;
+}
+.reservation-link:before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--green);
+  transform: translateY(101%);
+  transition: transform 0.4s var(--scene-ease);
+  z-index: -1;
+}
+.detail-photo img {
+  view-transition-name: none;
+}
+@media (hover: hover) and (pointer: fine) {
+  .discovery-orbit:hover {
+    background: var(--dark);
+  }
+  .discovery-orbit:hover > svg:not(.orbit-ring) {
+    transform: translateY(3px);
+  }
+  .reservation-link:hover:before {
+    transform: translateY(0);
+  }
+  .reservation-link:hover {
+    background: transparent;
+    color: var(--paper);
+  }
+  .taste-product-link:hover {
+    color: var(--scene-gold);
+  }
+  .taste-tab:hover {
+    color: var(--paper);
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  html.has-experience .opening-scene {
+    height: 180svh;
+  }
+  html.has-experience .tasting-section {
+    height: 185svh;
+  }
+}
+@media (min-width: 1700px) {
+  .opening-copy {
+    left: max(var(--gutter), calc((100vw - 1500px) / 2));
+  }
+  .photo-left {
+    left: 12%;
+  }
+  .photo-right {
+    right: 11%;
+  }
+  .discovery-orbit {
+    right: 14%;
+  }
+  .scene-end-copy {
+    left: 12%;
+  }
+}
+@media (max-height: 800px) and (min-width: 901px) {
+  .scene-sticky {
+    min-height: 580px;
+  }
+  .cinema-frame {
+    height: 62svh;
+    min-height: 370px;
+    top: 54%;
+  }
+  .photo-left {
+    height: 25svh;
+    min-height: 160px;
+    top: 35%;
+  }
+  .photo-right {
+    height: 29svh;
+    min-height: 180px;
+  }
+  .opening-copy {
+    bottom: 13%;
+  }
+  .opening-copy h1 {
+    font-size: 56px;
+  }
+  .opening-copy p {
+    font-size: 10px;
+    margin-top: 12px;
+  }
+  .monument-word {
+    font-size: 27vw;
+    top: 18px;
+  }
+  .tasting-sticky {
+    min-height: 650px;
+    padding-top: 32px;
+  }
+  .tasting-heading h2 {
+    font-size: 44px;
+  }
+  .taste-layout {
+    height: calc(100% - 130px);
+  }
+  .taste-counter {
+    margin-bottom: 16px;
+  }
+  .taste-copy h3 {
+    font-size: 50px;
+  }
+  .taste-copy-stack {
+    min-height: 210px;
+  }
+  .taste-tabs {
+    margin-top: 12px;
+  }
+}
+@media (max-width: 1200px) {
+  .scene-sticky {
+    min-height: 660px;
+  }
+  .monument-word {
+    top: 48px;
+    font-size: 32vw;
+  }
+  .monument-word > em {
+    right: -24%;
+    font-size: 8vw;
+  }
+  .cinema-frame {
+    width: 34vw;
+    height: 59svh;
+    top: 53%;
+  }
+  .photo-left {
+    left: 5%;
+    width: 19vw;
+    top: 36%;
+    height: 26svh;
+  }
+  .photo-right {
+    right: 5%;
+    width: 18vw;
+    top: 29%;
+    height: 28svh;
+  }
+  .opening-copy {
+    max-width: 280px;
+    bottom: 13%;
+  }
+  .opening-copy h1 {
+    font-size: 58px;
+  }
+  .opening-copy p {
+    font-size: 10px;
+  }
+  .discovery-orbit {
+    right: 8%;
+    width: 112px;
+    height: 112px;
+    bottom: 13%;
+    font-size: 9px;
+  }
+  .scene-end-copy {
+    font-size: 62px;
+    max-width: 280px;
+  }
+  .taste-layout {
+    gap: 7%;
+    grid-template-columns: 1fr 1.1fr;
+  }
+  .taste-copy h3 {
+    font-size: 55px;
+  }
+  .tasting-heading h2 {
+    font-size: 47px;
+    max-width: 58%;
+    margin-right: 2%;
+  }
+  .taste-tabs {
+    gap: 20px;
+  }
+  .taste-gallery {
+    margin-right: 16px;
+  }
+}
+@media (max-width: 900px) {
+  :root {
+    --header-height: 76px;
+  }
+  .scene-sticky {
+    height: calc(100svh - 76px);
+    min-height: 690px;
+  }
+  .opening-meta {
+    font-size: 7px;
+    top: 20px;
+  }
+  .opening-meta > span:nth-child(2) {
+    display: none;
+  }
+  .monument-word {
+    font-size: 39vw;
+    top: 50px;
+  }
+  .monument-word > em {
+    font-size: 9vw;
+    right: -23%;
+    top: 40%;
+  }
+  .cinema-frame {
+    width: 39vw;
+    height: 54svh;
+    min-height: 400px;
+    top: 49%;
+  }
+  .photo-left {
+    left: 3%;
+    width: 21vw;
+    height: 24svh;
+    min-height: 180px;
+    top: 34%;
+  }
+  .photo-right {
+    right: 3%;
+    width: 20vw;
+    height: 25svh;
+    min-height: 180px;
+    top: 27%;
+  }
+  .opening-copy {
+    bottom: 13%;
+    left: var(--gutter);
+    max-width: 240px;
+  }
+  .opening-copy h1 {
+    font-size: 50px;
+  }
+  .opening-copy p {
+    font-size: 10px;
+    max-width: 220px;
+  }
+  .discovery-orbit {
+    width: 104px;
+    height: 104px;
+    right: 9%;
+    bottom: 13%;
+  }
+  .cinema-controls {
+    left: 16px;
+    right: 16px;
+    bottom: 20px;
+    gap: 12px;
+  }
+  .cinema-controls > span {
+    font-size: 23px;
+  }
+  .cinema-label {
+    left: 16px;
+    right: 16px;
+    font-size: 7px;
+  }
+  .scene-end-copy {
+    font-size: 52px;
+    max-width: 220px;
+    bottom: 16%;
+  }
+  .tasting-sticky {
+    min-height: 760px;
+    padding-top: 40px;
+  }
+  .tasting-heading h2 {
+    font-size: 41px;
+    max-width: 65%;
+    margin-right: 0;
+  }
+  .tasting-heading .eyebrow {
+    font-size: 8px;
+    max-width: 120px;
+  }
+  .taste-layout {
+    gap: 5%;
+    grid-template-columns: 1fr 1fr;
+    height: calc(100% - 150px);
+  }
+  .taste-text {
+    padding-left: 0;
+  }
+  .taste-copy h3 {
+    font-size: 48px;
+  }
+  .taste-copy > p:not(.eyebrow) {
+    font-size: 12px;
+    max-width: 260px;
+  }
+  .taste-counter {
+    margin-bottom: 24px;
+  }
+  .taste-copy-stack {
+    min-height: 245px;
+  }
+  .taste-gallery {
+    max-height: 480px;
+  }
+  .taste-image-card {
+    inset: 16px 0 20px 4px;
+  }
+  .taste-frame-line {
+    inset: 16px 0 20px 4px;
+  }
+  .taste-product-link {
+    font-size: 10px;
+    gap: 16px;
+  }
+  .taste-tabs {
+    gap: 16px;
+  }
+  .taste-tab {
+    font-size: 9px;
+  }
+  .editorial-ribbon {
+    padding-block: 24px;
+  }
+  .editorial-ribbon > div {
+    gap: 32px;
+  }
+}
+@media (max-width: 600px) {
+  :root {
+    --header-height: 72px;
+  }
+  .site-header {
+    height: 72px;
+  }
+  .opening-meta {
+    left: 20px;
+    right: 20px;
+    top: 16px;
+    font-size: 6px;
+    letter-spacing: 0.13em;
+  }
+  .scene-sticky {
+    height: calc(100svh - 72px);
+    min-height: 690px;
+    max-height: 860px;
+    position: relative;
+    top: auto;
+  }
+  .monument-word {
+    top: 48px;
+    font-size: 60vw;
+    letter-spacing: -0.065em;
+    left: 43%;
+    line-height: 0.8;
+  }
+  .monument-word > em {
+    font-size: 14vw;
+    right: -35%;
+    top: 56%;
+    transform: rotate(-10deg);
+  }
+  .cinema-frame {
+    width: 52vw;
+    height: 360px;
+    min-height: 0;
+    top: 40%;
+    max-height: 48svh;
+    left: 51.5%;
+    transform: translate(-50%, -50%);
+  }
+  .cinema-reveal {
+    box-shadow: 0 16px 60px #102e2922;
+  }
+  .cinema-label {
+    top: 14px;
+    left: 12px;
+    right: 12px;
+    font-size: 6px;
+    letter-spacing: 0.12em;
+  }
+  .cinema-controls {
+    bottom: 14px;
+    left: 12px;
+    right: 12px;
+    gap: 8px;
+  }
+  .cinema-controls > span {
+    font-size: 19px;
+    max-width: 118px;
+  }
+  .cinema-controls .film-control {
+    width: 38px;
+    height: 44px;
+    border-radius: 999px;
+  }
+  .cinema-controls .film-control svg {
+    width: 14px;
+    height: 14px;
+  }
+  .cinema-side-label {
+    font-size: 6px;
+    right: -14px;
+    letter-spacing: 0.15em;
+  }
+  .floating-photo figcaption {
+    font-size: 5px;
+    bottom: -14px;
+    letter-spacing: 0.06em;
+  }
+  .photo-left {
+    left: -7%;
+    top: 34%;
+    width: 32vw;
+    height: 142px;
+    min-height: 0;
+    transform: rotate(-11deg);
+    max-height: 23svh;
+  }
+  .photo-right {
+    right: -4%;
+    top: 24%;
+    width: 28vw;
+    height: 168px;
+    min-height: 0;
+    max-height: 25svh;
+    transform: rotate(10deg);
+  }
+  .photo-left figcaption {
+    left: 24px;
+  }
+  .photo-right figcaption {
+    font-size: 5px;
+  }
+  .opening-copy {
+    left: 24px;
+    bottom: 14%;
+    max-width: 250px;
+    z-index: 5;
+  }
+  .opening-copy h1 {
+    font-size: 49px;
+    line-height: 1;
+  }
+  .opening-copy p {
+    font-size: 11px;
+    line-height: 1.8;
+    margin-top: 12px;
+    max-width: 220px;
+  }
+  .line-mask {
+    padding-bottom: 2px;
+  }
+  .discovery-orbit {
+    right: 24px;
+    bottom: 16.5%;
+    width: 86px;
+    height: 86px;
+    font-size: 8px;
+    letter-spacing: 0.08em;
+    gap: 5px;
+  }
+  .discovery-orbit > svg:not(.orbit-ring) {
+    width: 15px;
+    height: 15px;
+  }
+  .opening-bottom {
+    left: 24px;
+    right: 24px;
+    bottom: 19px;
+    font-size: 6px;
+    letter-spacing: 0.09em;
+  }
+  .opening-bottom > span {
+    display: none;
+  }
+  .opening-bottom > a {
+    gap: 10px;
+  }
+  .scroll-line {
+    height: 22px;
+  }
+  .scene-end-copy {
+    display: none;
+  }
+  .scene-progress {
+    display: none;
+  }
+  .tasting-sticky {
+    position: relative;
+    top: auto;
+    height: auto;
+    min-height: 0;
+    padding: 40px 24px 72px;
+    overflow: hidden;
+  }
+  .tasting-heading {
+    display: block;
+    padding-bottom: 28px;
+  }
+  .tasting-heading .eyebrow {
+    padding: 0;
+    max-width: none;
+    font-size: 8px;
+    margin-bottom: 20px;
+  }
+  .tasting-heading h2 {
+    font-size: 40px;
+    max-width: 100%;
+    margin: 0;
+    line-height: 1.06;
+  }
+  .taste-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    height: auto;
+    max-height: none;
+  }
+  .taste-gallery {
+    order: -1;
+    width: calc(100% - 16px);
+    height: 360px;
+    max-height: none;
+    margin: 0 16px 0 0;
+    align-self: start;
+  }
+  .taste-image-card {
+    inset: 12px 8px 16px 8px;
+  }
+  .taste-frame-line {
+    inset: 12px 8px 16px 8px;
+  }
+  .taste-gallery-note {
+    font-size: 6px;
+    right: -17px;
+    letter-spacing: 0.15em;
+  }
+  .taste-text {
+    width: 100%;
+    padding: 0;
+  }
+  .taste-counter {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 0;
+    gap: 8px;
+    font-size: 8px;
+  }
+  .taste-counter #taste-current {
+    font-size: 38px;
+  }
+  .taste-copy-stack {
+    min-height: 235px;
+  }
+  .taste-copy .eyebrow {
+    font-size: 7px;
+    margin-bottom: 12px;
+    padding-right: 90px;
+  }
+  .taste-copy h3 {
+    font-size: 46px;
+    max-width: 270px;
+  }
+  .taste-copy > p:not(.eyebrow) {
+    font-size: 12px;
+    max-width: 290px;
+    margin-top: 16px;
+    line-height: 1.9;
+  }
+  .taste-product-link {
+    font-size: 10px;
+    max-width: 290px;
+    margin-top: 8px;
+  }
+  .taste-tabs {
+    margin-top: 20px;
+    gap: 0;
+    justify-content: space-between;
+  }
+  .taste-tab {
+    font-size: 11px;
+    gap: 10px;
+    min-width: 85px;
+  }
+  .taste-tab span {
+    font-size: 9px;
+  }
+  .tasting-skip {
+    font-size: 9px;
+    right: 24px;
+    bottom: 15px;
+  }
+  .editorial-ribbon {
+    padding-block: 20px;
+  }
+  .editorial-ribbon > div {
+    gap: 24px;
+  }
+  .editorial-ribbon span,
+  .editorial-ribbon em {
+    font-size: 54px;
+  }
+  .editorial-ribbon i {
+    font-size: 20px;
+  }
+  .featured-section {
+    padding-top: 48px;
+  }
+  .featured-track {
+    grid-auto-columns: 85%;
+  }
+  .venue-picture:before {
+    inset: 14px -14px -14px 14px;
+  }
+  .image-follow-cursor {
+    display: none;
+  }
+  .reservation-link:before {
+    display: none;
+  }
+  .reservation-link:hover {
+    color: var(--green);
+  }
+}
+@media (max-width: 600px) and (max-height: 750px) {
+  .scene-sticky {
+    min-height: 650px;
+  }
+  .cinema-frame {
+    height: 305px;
+    max-height: none;
+    top: 39%;
+  }
+  .monument-word {
+    top: 40px;
+  }
+  .opening-copy {
+    bottom: 13%;
+  }
+  .opening-copy h1 {
+    font-size: 45px;
+  }
+  .opening-copy p {
+    font-size: 10px;
+  }
+  .discovery-orbit {
+    width: 78px;
+    height: 78px;
+    bottom: 15%;
+  }
+  .photo-left {
+    height: 120px;
+    top: 33%;
+  }
+  .photo-right {
+    height: 145px;
+    top: 23%;
+  }
+}
+@media (prefers-reduced-motion: no-preference) and (max-width: 600px) {
+  html.has-experience .opening-scene,
+  html.has-experience .tasting-section {
+    height: auto;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .opening-scene,
+  .tasting-section {
+    height: auto !important;
+  }
+  .scene-sticky,
+  .tasting-sticky {
+    position: relative;
+    top: auto;
+  }
+  .monument-word,
+  .floating-photo,
+  .cinema-frame,
+  .opening-copy,
+  .discovery-orbit {
+    opacity: 1;
+  }
+  .editorial-ribbon > div {
+    transform: translateX(-6%);
+  }
+  .scene-progress {
+    display: none;
+  }
+}
+
+/* Keep the headline and the menu control separate on the narrowest phones. */
+@media (max-width: 360px) {
+  /* The language switch needs room next to the reservation link and menu toggle. */
+  .site-header {
+    padding-inline: 14px;
+  }
+  .header-actions {
+    gap: 4px;
+  }
+  .opening-copy {
+    bottom: 14%;
+    max-width: calc(100% - 40px);
+  }
+  .opening-copy h1 {
+    font-size: 43px;
+  }
+  .opening-copy p {
+    font-size: 10px;
+    max-width: 190px;
+  }
+  .discovery-orbit {
+    width: 66px;
+    height: 66px;
+    right: 25px;
+    bottom: 14%;
+    font-size: 7px;
+    gap: 5px;
+  }
+  .discovery-orbit > svg:not(.orbit-ring) {
+    width: 13px;
+    height: 13px;
+  }
+  .cinema-controls > span {
+    font-size: 17px;
+  }
+  .cinema-controls {
+    gap: 6px;
+    left: 12px;
+    right: 12px;
+  }
+  .cinema-controls .film-control {
+    width: 44px;
+    height: 44px;
+  }
+  .opening-bottom {
+    bottom: 10px;
+  }
+  .opening-bottom > a {
+    font-size: 5.5px;
+    max-width: 200px;
+  }
+  .taste-copy h3 {
+    font-size: 42px;
+  }
+  .taste-tab {
+    min-width: 76px;
+    font-size: 10px;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+  .opening-copy h1 {
+    font-size: 42px;
+  }
+  .scene-end-copy {
+    font-size: 42px;
+    max-width: 185px;
+  }
+}
+
+/* Font-independent ribbon mark and touch-first mobile story navigation. */
+.taste-swipe-hint {
+  display: none;
+}
+.editorial-ribbon .ribbon-star {
+  width: 32px;
+  height: 32px;
+  color: var(--bronze);
+  stroke-width: 1.2;
+  overflow: visible;
+  flex: none;
+}
+@media (max-width: 600px) {
+  .taste-gallery {
+    touch-action: pan-y;
+    overscroll-behavior-x: contain;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  .taste-image-card.is-active {
+    transform: translate3d(var(--swipe-x, 0), 0, 0) rotate(3deg);
+    transition: transform 0.28s var(--scene-ease);
+    will-change: transform;
+  }
+  .taste-gallery.is-swiping .taste-image-card.is-active {
+    transition: none;
+  }
+  .taste-swipe-hint {
+    position: absolute;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    left: 50%;
+    bottom: 27px;
+    z-index: 5;
+    transform: translateX(-50%);
+    padding: 7px 11px;
+    border: 1px solid #f7f5ef55;
+    border-radius: 999px;
+    background: #122f29c7;
+    color: var(--paper);
+    font-size: 8px;
+    letter-spacing: 0.12em;
+    line-height: 1;
+    pointer-events: none;
+    backdrop-filter: blur(5px);
+  }
+  .taste-swipe-hint svg {
+    width: 15px;
+    height: 15px;
+    stroke-width: 1.5;
+  }
+  .editorial-ribbon .ribbon-star {
+    width: 20px;
+    height: 20px;
+    stroke-width: 1.15;
+  }
+}
