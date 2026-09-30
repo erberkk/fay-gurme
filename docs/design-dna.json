@@ -1,0 +1,408 @@
+{
+  "meta": {
+    "name": "Fay Gurme — cinematic editorial",
+    "description": "A new visual direction built around the existing logo's green and the venue's actual photography. This is a redesign, not a palette match to the original webpage.",
+    "source_references": [
+      "https://faygurme.goatmenu.net/menu",
+      "DESIGN.md",
+      "https://linki.ac/FAYGURME"
+    ],
+    "created_at": "2026-09-12"
+  },
+  "design_system": {
+    "color": {
+      "palette_type": "analogous warm neutrals and deep green",
+      "primary": {
+        "hex": "#004A43",
+        "role": "Logo green, calls to action, active categories"
+      },
+      "secondary": {
+        "hex": "#203C34",
+        "role": "Reading text and display typography"
+      },
+      "accent": {
+        "hex": "#795B35",
+        "role": "Bronze overlines and small graphic details"
+      },
+      "neutral": {
+        "scale": [
+          "#FFFFFF",
+          "#F7F5EF",
+          "#EEEBE3",
+          "#DCDDD3",
+          "#59655D",
+          "#203C34",
+          "#102E29"
+        ],
+        "usage": "Ivory page, slightly darker menu surface, dark green foreground; no pure black"
+      },
+      "semantic": {
+        "success": "#004A43",
+        "warning": "#795B35",
+        "error": "#9B3535",
+        "info": "#59655D"
+      },
+      "surface": {
+        "background": "#F7F5EF",
+        "card": "#EEEBE3",
+        "elevated": "#F7F5EF"
+      },
+      "contrast_strategy": "All reading text passes 4.5:1 on both light surfaces; dark overlays protect text over video"
+    },
+    "typography": {
+      "type_scale": {
+        "display": {
+          "size": "clamp(51px, 6.2vw, 99px)",
+          "weight": "400",
+          "line_height": "0.98–1.01",
+          "tracking": "-0.045em"
+        },
+        "heading_1": {
+          "size": "clamp(48px, 5.2vw, 80px)",
+          "weight": "400",
+          "line_height": "1",
+          "tracking": "-0.04em"
+        },
+        "heading_2": {
+          "size": "clamp(34px, 3.4vw, 54px)",
+          "weight": "400",
+          "line_height": "1.05",
+          "tracking": "-0.03em"
+        },
+        "heading_3": {
+          "size": "23–26px",
+          "weight": "400",
+          "line_height": "1.1",
+          "tracking": "-0.02em"
+        },
+        "body": {
+          "size": "14px",
+          "weight": "400",
+          "line_height": "1.85",
+          "tracking": "0"
+        },
+        "body_small": {
+          "size": "12px",
+          "weight": "400",
+          "line_height": "1.75",
+          "tracking": "0"
+        },
+        "caption": {
+          "size": "11px",
+          "weight": "400",
+          "line_height": "1.8",
+          "tracking": "0"
+        },
+        "overline": {
+          "size": "8–10px",
+          "weight": "700",
+          "line_height": "1.8",
+          "tracking": "0.18em"
+        }
+      },
+      "font_families": {
+        "heading": "Cormorant Garamond, Georgia, serif",
+        "body": "Manrope, Arial, sans-serif",
+        "mono": "Manrope with tabular numerals"
+      },
+      "font_style_notes": "Elegant, high-contrast serif with restrained italics; locally hosted variable fonts include Turkish glyphs"
+    },
+    "spacing": {
+      "base_unit": "4px",
+      "scale": [
+        4,
+        8,
+        12,
+        16,
+        20,
+        24,
+        32,
+        40,
+        48,
+        64,
+        80,
+        96,
+        120
+      ],
+      "content_density": "spacious presentation, comfortable menu",
+      "section_rhythm": "80–120px desktop, 48–56px mobile"
+    },
+    "layout": {
+      "grid_system": "Monumental layered typographic opening, native sticky scroll scene, three-chapter tasting story, moving type ribbon, editorial featured rail, practical menu grid",
+      "max_content_width": "1440px content within 1600px outer width",
+      "columns": "2–3 menu columns",
+      "gutter": "clamp(20px, 5vw, 80px)",
+      "breakpoints": [
+        600,
+        900,
+        1200
+      ],
+      "alignment_tendency": "Editorial asymmetry followed by strict menu alignment"
+    },
+    "shape": {
+      "border_radius": {
+        "small": "4px",
+        "medium": "12px",
+        "large": "12px",
+        "pill": "999px"
+      },
+      "border_usage": "Restrained 1px lines; photos remain rectangular",
+      "divider_style": "Hairline muted green separators"
+    },
+    "elevation": {
+      "shadow_style": "Subtle and limited to floating elements",
+      "levels": {
+        "low": "0 8px 24px #102E290A",
+        "medium": "0 16px 60px #102E2914",
+        "high": "0 24px 100px #102E2933"
+      },
+      "depth_cues": "Surface contrast, hero seal overlap and dialog backdrop"
+    },
+    "iconography": {
+      "style": "Small, outlined, native SVG",
+      "stroke_weight": "1.5px",
+      "size_scale": [
+        14,
+        16,
+        20,
+        24,
+        32
+      ],
+      "preferred_set": "Custom minimal functional SVG paths"
+    },
+    "motion": {
+      "easing": "cubic-bezier(.2,.7,.2,1)",
+      "duration_scale": {
+        "micro": "160ms",
+        "normal": "280–550ms",
+        "macro": "800–1250ms"
+      },
+      "entrance_pattern": "Staggered FAY letters, clipped film reveal, photo layers and masked text; 1.25s",
+      "exit_pattern": "160ms opacity only",
+      "philosophy": "Expressive storytelling with native scrolling. Compact mobile scenes, full reduced-motion fallback; direct /menu skips presentation."
+    },
+    "components": {
+      "button_style": "Rectangular green primary, outlined secondary, circular icon controls; minimum 44px targets",
+      "input_style": "Wide ivory search, persistent accessible name, visible focus, native clear action",
+      "card_style": "Real food photo, serif name, exact source price, short description; full details on tap",
+      "navigation_pattern": "Sticky top header, desktop category sidebar, mobile category dialog and bottom dock",
+      "modal_style": "Native dialog with focus management; bottom sheet on phones",
+      "list_style": "Editorial featured rail and paginated adaptive menu grid",
+      "component_notes": "Source dietary symbols and allergen metadata are preserved; no inferred safety claims"
+    }
+  },
+  "design_style": {
+    "aesthetic": {
+      "mood": [
+        "warm",
+        "refined",
+        "intimate",
+        "confident"
+      ],
+      "visual_metaphor": "An elegant restaurant's printed menu brought to life",
+      "era_influence": "Contemporary hospitality with classical typography",
+      "genre": "Luxury editorial hospitality",
+      "personality_traits": [
+        "welcoming",
+        "considered",
+        "calm"
+      ],
+      "adjectives": [
+        "tactile",
+        "airy",
+        "unhurried"
+      ]
+    },
+    "visual_language": {
+      "complexity": "moderate",
+      "ornamentation": "One typographic seal, fine lines and discreet overlines",
+      "whitespace_usage": "Generous in the introduction; practical in the menu",
+      "visual_weight_distribution": "Large left headline balanced by right portrait film",
+      "focal_strategy": "Venue, then food, then choice",
+      "contrast_level": "Strong type contrast with restrained surface variation",
+      "texture_usage": "Real food and interior textures, no artificial grain"
+    },
+    "composition": {
+      "hierarchy_method": "Scale and space",
+      "balance_type": "Asymmetric hero, balanced menu",
+      "flow_direction": "Vertical with optional horizontal featured discovery",
+      "grouping_strategy": "Original food categories grouped by dining stage",
+      "negative_space_role": "Create calm and give photos room"
+    },
+    "imagery": {
+      "photo_treatment": "Twelve documented AI-assisted restorations, all other food and interior photos from original source; preserve dish identity",
+      "illustration_style": "None",
+      "graphic_elements": "Monumental FAY letters, rotated photo stack, orbital menu link, hairline borders",
+      "pattern_usage": "None",
+      "image_shape": "Predominantly rectangular"
+    },
+    "interaction_feel": {
+      "feedback_style": "Immediate, restrained, visible",
+      "hover_behavior": "Magnetic menu CTA, inspection marker on featured photos, image scale",
+      "transition_personality": "Cinematic entrance and scroll choreography; quick menu response",
+      "loading_style": "Reserved photo space and actual video poster; no blocking intro",
+      "microinteraction_density": "Moderate on the landing, restrained in the menu"
+    },
+    "brand_voice_in_ui": {
+      "tone": "Warm and concise",
+      "formality": "Polished everyday Turkish",
+      "cta_style": "Friendly direct invitation",
+      "empty_state_approach": "Explain the state and offer a useful next action",
+      "error_tone": "Calm, clear and actionable"
+    }
+  },
+  "visual_effects": {
+    "overview": {
+      "effect_intensity": "expressive landing",
+      "performance_tier": "lightweight",
+      "fallback_strategy": "Static layout and manual chapters without GSAP; reduced motion removes animation and auto playback",
+      "primary_technology": "GSAP 3.13.0 / ScrollTrigger, CSS native sticky, SVG and HTML video"
+    },
+    "background_effects": {
+      "type": "video-bg",
+      "description": "Actual venue footage within a portrait hero panel",
+      "technology": "HTML video with IntersectionObserver",
+      "params": {
+        "color_palette": [
+          "#102E29",
+          "#CAB57C"
+        ],
+        "speed": "Original playback speed",
+        "density": "One visible video only",
+        "opacity": "1",
+        "blend_mode": "Normal with a dark text-protection overlay"
+      }
+    },
+    "particle_systems": {
+      "enabled": false,
+      "type": "none",
+      "description": "Not used",
+      "technology": "none",
+      "params": {
+        "count": 0,
+        "shape": "none",
+        "size_range": "none",
+        "movement_pattern": "none",
+        "color_behavior": "none",
+        "interaction": "none",
+        "spawn_area": "none"
+      }
+    },
+    "3d_elements": {
+      "enabled": false,
+      "type": "none",
+      "description": "Not used",
+      "technology": "none",
+      "params": {
+        "renderer": "none",
+        "lighting": "none",
+        "camera": "none",
+        "materials": "none",
+        "geometry": "none",
+        "post_processing": "none",
+        "interaction_model": "none"
+      }
+    },
+    "shader_effects": {
+      "enabled": false,
+      "type": "none",
+      "description": "Not used",
+      "technology": "none",
+      "params": {
+        "uniforms": "none",
+        "vertex_manipulation": "none",
+        "fragment_output": "none",
+        "noise_type": "none",
+        "distortion": "none"
+      }
+    },
+    "scroll_effects": {
+      "parallax": {
+        "enabled": true,
+        "layers": 4,
+        "depth_range": "Photo translation ±45%; film scale 1.06",
+        "speed_curve": "Scroll-linked scrub .65–1s"
+      },
+      "scroll_triggered_animations": {
+        "enabled": true,
+        "trigger_points": "Opening, tasting chapters, ribbon and section entrances",
+        "animation_type": "Transform, opacity, clip reveal and background color",
+        "scrub_behavior": "Opening and ribbon scrub; chapters select at .34 and .7 progress"
+      },
+      "scroll_morphing": {
+        "enabled": true,
+        "description": "Ivory opening dissolves into dark green; photo layers separate, end copy appears"
+      }
+    },
+    "text_effects": {
+      "type": "staggered letters and masked lines",
+      "description": "FAY letters enter individually; headline lines reveal upward; ribbon tracks scroll",
+      "technology": "GSAP with semantic HTML",
+      "params": {
+        "split_strategy": "Three decorative letters; semantic h1 line wrappers",
+        "animation_per_unit": "Y transform and opacity",
+        "stagger": "90–120ms",
+        "effect_style": "Editorial reveal"
+      }
+    },
+    "cursor_effects": {
+      "enabled": true,
+      "type": "supplemental image inspection marker",
+      "description": "System pointer remains; 82px marker only inside featured photos on fine pointer devices",
+      "params": {
+        "shape": "circle",
+        "size": "82px",
+        "blend_mode": "none",
+        "trail": "none",
+        "interaction_zone": "Featured product photos"
+      }
+    },
+    "image_effects": {
+      "type": "layered motion and card reveal",
+      "description": "Entrance clip reveal, rotated story photos, menu photo hover scale",
+      "technology": "GSAP and CSS transforms",
+      "params": {
+        "filter_pipeline": "none",
+        "hover_transform": "scale(1.035)",
+        "reveal_animation": "600ms opacity and translate for the hero only",
+        "distortion_type": "none"
+      }
+    },
+    "glassmorphism_neumorphism": {
+      "enabled": true,
+      "style": "frosted dialog backdrop only",
+      "params": {
+        "blur_radius": "5px",
+        "transparency": "30%",
+        "border_treatment": "none",
+        "shadow_type": "Diffused dialog shadow",
+        "light_source_angle": "Ambient"
+      }
+    },
+    "canvas_drawings": {
+      "enabled": false,
+      "type": "none",
+      "description": "Not used",
+      "technology": "none",
+      "params": {
+        "draw_method": "none",
+        "animation_loop": "none",
+        "color_scheme": "none",
+        "responsiveness": "none",
+        "interaction": "none"
+      }
+    },
+    "svg_animations": {
+      "enabled": true,
+      "type": "orbital ring rotation",
+      "description": "Menu ring rotates with opening scene progress",
+      "params": {
+        "animation_method": "none",
+        "path_morphing": "none",
+        "stroke_animation": "none",
+        "filter_effects": "none"
+      }
+    },
+    "composite_notes": "Local GSAP and ScrollTrigger; no external runtime requests. Locally restored 1080p film is used at the original 30 fps, paused outside view. 12 AI-assisted photo restorations are documented separately; original files and PNG masters retained. Manual story tabs work without GSAP, compact layout on phones. Local frame-wise Real-ESRGAN restoration completed; 75% restored / 25% source blend, original source archived."
+  }
+}
